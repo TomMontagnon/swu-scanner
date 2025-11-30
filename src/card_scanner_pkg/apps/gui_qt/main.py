@@ -134,6 +134,7 @@ def main() -> None:
     app.aboutToQuit.connect(ctrl.quit)
     selector_widget.source_selected.connect(ctrl.set_source)
     export_widget.export_requested.connect(history_widget.export_csv)
+    offline_db_widget.directory_selected.connect(ctrl.worker2.set_offline_db_path)
 
     sys.exit(app.exec())
     # app.exec()

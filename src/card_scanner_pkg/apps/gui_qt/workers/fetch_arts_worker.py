@@ -5,6 +5,7 @@ from importlib import resources
 from pathlib import Path
 import cv2
 
+
 class FetchArtsWorker(QtCore.QObject):
     arts_ready = QtCore.Signal(dict, list)
 
@@ -15,6 +16,7 @@ class FetchArtsWorker(QtCore.QObject):
         ) as p:
             self._default_card_image = cv2.imread(str(p))
         self.is_online = True
+        self.offline_db_path = None
 
     def get_arts(self, dico: dict[str]) -> None:
         lan = dico["exp"].name.split("_")[1].lower()
@@ -24,7 +26,9 @@ class FetchArtsWorker(QtCore.QObject):
         data = self.get_variants_online(lan, exp, card_number)
         arr = []
         for variant_name, url in data:
-            file = Path(f"cards/{exp_name}/{card_number}/{variant_name}.png")
+            file = Path(
+                f"{self.offline_db_path}/{exp_name}/{card_number}/{variant_name}.png"
+            )
             if file.is_file():
                 # print("OFFLINE :", card_number, variant_name)
                 img = cv2.imread(file)
@@ -35,6 +39,9 @@ class FetchArtsWorker(QtCore.QObject):
                 img = self._default_card_image
             arr.append((variant_name, img))
         self.arts_ready.emit(dico, arr)
+
+    def set_offline_db_path(self, path: str) -> None:
+        self.offline_db_path = path
 
     def get_variants_online(self, lan, exp, card_number) -> list:
         url = "https://admin.starwarsunlimited.com/api/card-list"

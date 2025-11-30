@@ -9,7 +9,6 @@ from card_scanner_pkg.core.api import (
     Frame,
     Meta,
 )
-from card_scanner_pkg.core.io import VideoFileSource
 from importlib import resources
 
 from typing import TYPE_CHECKING
@@ -40,7 +39,6 @@ class DetectCardWorker(QtCore.QObject):
         ) as p:
             self._default_main_image = cv2.imread(str(p))
         self._source = None
-        self.set_source(VideoFileSource("videos/video0.mp4"))
         self._pipeline_main = pipelines["pipeline_main"]
         self._pipeline_side = pipelines["pipeline_side"]
         self._pipeline_ocr = pipelines["pipeline_ocr"]
@@ -52,7 +50,7 @@ class DetectCardWorker(QtCore.QObject):
             QtCore.QCoreApplication.processEvents()
             try:
                 if not self._source:
-                    m = "rez"
+                    m = "no sources available"
                     raise NoSourceAvailableError(m)
                 raw_frame, raw_meta = self._source.read()
             except NoSourceAvailableError:
