@@ -5,15 +5,13 @@ from card_scanner.core.api import IFrameSource, Frame, Meta, NoSourceAvailableEr
 
 
 class CameraSource(IFrameSource):
-    def __init__(
-        self, index: int = 0, width: int | None = None, height: int | None = None
-    ) -> None:
+    def __init__(self, index: int = 0, width: int = 1920, height: int = 1080) -> None:
         self._index = index
         self._cap: cv2.VideoCapture | None = None
         self._width, self._height = width, height
 
     def start(self) -> None:
-        self._cap = cv2.VideoCapture(self._index, cv2.CAP_ANY)
+        self._cap = cv2.VideoCapture(self._index, cv2.CAP_V4L2)
         if self._width:
             self._cap.set(cv2.CAP_PROP_FRAME_WIDTH, self._width)
         if self._height:
