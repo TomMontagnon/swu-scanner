@@ -1,7 +1,7 @@
 from __future__ import annotations
 import cv2
 import time
-from card_scanner.core.api import IFrameSource, Frame, Meta, NoSourceAvailableError
+from card_scanner_pkg.core.api import IFrameSource, Frame, Meta, NoSourceAvailableError
 
 
 class CameraSource(IFrameSource):

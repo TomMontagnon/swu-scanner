@@ -1,6 +1,6 @@
 from __future__ import annotations
 from collections import deque, Counter
-from card_scanner.core.api import IPipelineStage, Expansion
+from card_scanner_pkg.core.api import IPipelineStage, Expansion
 from paddleocr import PaddleOCR
 import cv2
 import numpy as np
@@ -8,7 +8,7 @@ import numpy as np
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from card_scanner.core.api import Frame, Meta
+    from card_scanner_pkg.core.api import Frame, Meta
 
 MIN_CONF = 0.8
 SEUIL_SCALE = 0.01

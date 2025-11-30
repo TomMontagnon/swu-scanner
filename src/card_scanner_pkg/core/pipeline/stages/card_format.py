@@ -1,12 +1,12 @@
 from __future__ import annotations
-from card_scanner.core.api import IPipelineStage
+from card_scanner_pkg.core.api import IPipelineStage
 import numpy as np
 import cv2
 
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from card_scanner.core.api import Frame, Meta
+    from card_scanner_pkg.core.api import Frame, Meta
 
 
 CARD_W_MM = 63.0

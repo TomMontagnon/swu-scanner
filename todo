@@ -1,7 +1,0 @@
-# TODO
-- le fetch par defaut qui devrait prendre une image locale
-
-- implement le bouton fetchAllCards
-
-- si plusieurs cards fetch, alerte + possibilité de toggle en cliquant
-(brillant extension 1/2/3)

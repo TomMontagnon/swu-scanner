@@ -1,8 +1,8 @@
 from __future__ import annotations
 import cv2
 from PySide6 import QtWidgets, QtCore
-from card_scanner.core.api import IFrameSource
-from card_scanner.core.io import RtspSource, CameraSource, VideoFileSource
+from card_scanner_pkg.core.api import IFrameSource
+from card_scanner_pkg.core.io import RtspSource, CameraSource, VideoFileSource
 
 
 class SourceSelectorWidget(QtWidgets.QToolButton):

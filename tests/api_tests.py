@@ -1,8 +1,8 @@
-from card_scanner.core.utils.imaging import np_from_url
+from card_scanner_pkg.core.utils.imaging import np_from_url
 import json
-from card_scanner.core.utils.network import request_url
+from card_scanner_pkg.core.utils.network import request_url
 
-from card_scanner.core.api.types import Expansion
+from card_scanner_pkg.core.api.types import Expansion
 
 
 class FetchArtWorker:

@@ -1,7 +1,7 @@
 from __future__ import annotations
 import cv2
 from PySide6 import QtCore
-from card_scanner.core.api import (
+from card_scanner_pkg.core.api import (
     Expansion,
     NoCardDetectedError,
     NoSourceAvailableError,
@@ -9,13 +9,13 @@ from card_scanner.core.api import (
     Frame,
     Meta,
 )
-from card_scanner.core.io import VideoFileSource
+from card_scanner_pkg.core.io import VideoFileSource
 from importlib import resources
 
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from card_scanner.core.pipeline import Pipeline
+    from card_scanner_pkg.core.pipeline import Pipeline
     from collections.abc import Iterable
 
 
@@ -31,12 +31,12 @@ class DetectCardWorker(QtCore.QObject):
         super().__init__()
         self._running = False
         with resources.path(
-            "card_scanner.apps.gui_qt.assets.images", "no_zoom_available.png"
+            "card_scanner_pkg.apps.gui_qt.assets.images", "no_zoom_available.png"
         ) as p:
             self._default_side_image = cv2.imread(str(p))
 
         with resources.path(
-            "card_scanner.apps.gui_qt.assets.images", "no_image_source_available.png"
+            "card_scanner_pkg.apps.gui_qt.assets.images", "no_image_source_available.png"
         ) as p:
             self._default_main_image = cv2.imread(str(p))
         self._source = None

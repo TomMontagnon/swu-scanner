@@ -1,12 +1,12 @@
 from __future__ import annotations
 import numpy as np
 from PySide6 import QtCore, QtGui
-from card_scanner.core.api import IFrameSink
-from card_scanner.core.utils import np_to_qimage_bgr
+from card_scanner_pkg.core.api import IFrameSink
+from card_scanner_pkg.core.utils import np_to_qimage_bgr
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from card_scanner.core.api import Frame, Meta
+    from card_scanner_pkg.core.api import Frame, Meta
 
 
 class _Emitter(QtCore.QObject):

@@ -1,6 +1,6 @@
 import asyncio
-from card_scanner.core.utils.imaging import np_from_url_async
-from card_scanner.core.utils.network import request_url_async
+from card_scanner_pkg.core.utils.imaging import np_from_url_async
+from card_scanner_pkg.core.utils.network import request_url_async
 from enum import Enum
 from pathlib import Path
 import cv2

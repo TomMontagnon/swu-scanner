@@ -1,11 +1,11 @@
 from __future__ import annotations
 import cv2
 import numpy as np
-from card_scanner.core.api import NoCardDetectedError, IPipelineStage
+from card_scanner_pkg.core.api import NoCardDetectedError, IPipelineStage
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from card_scanner.core.api import Frame, Meta
+    from card_scanner_pkg.core.api import Frame, Meta
 
 
 class CardDetectorStage(IPipelineStage):

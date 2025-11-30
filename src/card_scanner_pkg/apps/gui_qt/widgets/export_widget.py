@@ -1,5 +1,5 @@
 from PySide6 import QtWidgets, QtCore
-from card_scanner.core.api import Database
+from card_scanner_pkg.core.api import Database
 
 
 class ExportWidget(QtWidgets.QToolButton):

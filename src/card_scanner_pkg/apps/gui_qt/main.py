@@ -1,7 +1,7 @@
 import sys
 from PySide6 import QtWidgets, QtGui
-from card_scanner.core.api import Expansion
-from card_scanner.apps.gui_qt.widgets import (
+from card_scanner_pkg.core.api import Expansion
+from card_scanner_pkg.apps.gui_qt.widgets import (
     HistoryWidget,
     SourceSelectorWidget,
     ExportWidget,
@@ -10,8 +10,8 @@ from card_scanner.apps.gui_qt.widgets import (
     VideoView,
     OfflineDBWidget,
 )
-from card_scanner.apps.gui_qt.controller import AppController
-from card_scanner.core.pipeline import (
+from card_scanner_pkg.apps.gui_qt.controller import AppController
+from card_scanner_pkg.core.pipeline import (
     Pipeline,
     OcrExtractTextStage,
     OcrPreprocessStage,
@@ -22,7 +22,7 @@ from card_scanner.core.pipeline import (
     CardDetectorStage,
     EdgeExtractionStage,
 )
-from card_scanner.apps.gui_qt.qt_ui_sink import QtUISink
+from card_scanner_pkg.apps.gui_qt.qt_ui_sink import QtUISink
 
 
 def main() -> None:

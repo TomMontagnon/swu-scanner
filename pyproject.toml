@@ -3,9 +3,9 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "card_scanner"
+name = "swu-scanner"
 version = "0.1.0"
-description = "Core OpenCV + UI Pyside pour scanner des cartes SWU"
+description = "Ce projet combine PaddleOCR et PySide6 (Qt) pour créer une application graphique capable de scanner et reconnaître automatiquement les cartes du jeu Star Wars Unlimited. L’application détecte et lit le numéro de carte présent en bas à droite grâce à des modèles OCR optimisés. L’objectif est de fournir un outil rapide, précis et ergonomique pour le catalogage, le référencement ou la collection de cartes SWU."
 authors = [
     { name = "tom.montagnon", email = "tom.montagnon@protonmail.com" }
 ]
@@ -19,12 +19,12 @@ dependencies = [
 ]
 
 [project.scripts]
-my_app = "card_scanner.apps.gui_qt.main:main"
+launch-swu-scanner = "card_scanner_pkg.apps.gui_qt.main:main"
 
 
 [tool.setuptools.packages.find]
 where = ["src"]
-include = ["card_scanner*"]
+include = ["card_scanner_pkg*"]
 
 [tool.setuptools.package-data]
-card_scanner = ["apps/gui_qt/assets/**/*", "config/*.toml"]
+card_scanner_pkg = ["apps/gui_qt/assets/**/*"]

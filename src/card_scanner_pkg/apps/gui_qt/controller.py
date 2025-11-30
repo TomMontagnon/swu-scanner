@@ -1,11 +1,11 @@
 from __future__ import annotations
 from PySide6 import QtCore
-from card_scanner.apps.gui_qt.workers import DetectCardWorker, FetchArtsWorker
+from card_scanner_pkg.apps.gui_qt.workers import DetectCardWorker, FetchArtsWorker
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from card_scanner.core.api import Frame, Meta, IFrameSink, IFrameSource
-    from card_scanner.core.pipeline import Pipeline
+    from card_scanner_pkg.core.api import Frame, Meta, IFrameSink, IFrameSource
+    from card_scanner_pkg.core.pipeline import Pipeline
     from collections.abc import Iterable
 
 

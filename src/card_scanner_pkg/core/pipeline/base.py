@@ -3,7 +3,7 @@ from typing import Any
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from card_scanner.core.api import Frame, Meta, IPipelineStage
+    from card_scanner_pkg.core.api import Frame, Meta, IPipelineStage
     from collections.abc import Iterable
 
 

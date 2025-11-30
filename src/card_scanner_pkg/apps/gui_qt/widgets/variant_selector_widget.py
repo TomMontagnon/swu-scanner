@@ -1,7 +1,7 @@
 from __future__ import annotations
 from PySide6 import QtWidgets, QtCore, QtGui
 from .video_view import VideoView
-from card_scanner.core.api import Frame, Meta
+from card_scanner_pkg.core.api import Frame, Meta
 from importlib import resources
 
 
@@ -61,18 +61,18 @@ class VariantSelectorWidget(QtWidgets.QWidget):
 
         # Zones cliquables
         with resources.path(
-            "card_scanner.apps.gui_qt.assets.pictos", "left_arrow.png"
+            "card_scanner_pkg.apps.gui_qt.assets.pictos", "left_arrow.png"
         ) as p:
             self.left_area = ClickableArea(
                 self.stack_container, "rgba(255,0,0,0.3)", str(p)
             )
         with resources.path(
-            "card_scanner.apps.gui_qt.assets.pictos", "right_arrow.png"
+            "card_scanner_pkg.apps.gui_qt.assets.pictos", "right_arrow.png"
         ) as p:
             self.right_area = ClickableArea(
                 self.stack_container, "rgba(0,255,0,0.3)", str(p)
             )
-        with resources.path("card_scanner.apps.gui_qt.assets.pictos", "lock.png") as p:
+        with resources.path("card_scanner_pkg.apps.gui_qt.assets.pictos", "lock.png") as p:
             self.lock_area = ClickableArea(
                 self.stack_container, "rgba(0,0,255,0.3)", str(p)
             )

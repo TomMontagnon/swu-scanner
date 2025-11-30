@@ -1,5 +1,5 @@
 from __future__ import annotations
-from card_scanner.core.utils import np_from_url, request_url
+from card_scanner_pkg.core.utils import np_from_url, request_url
 from PySide6 import QtCore
 from importlib import resources
 from pathlib import Path
@@ -11,7 +11,7 @@ class FetchArtsWorker(QtCore.QObject):
     def __init__(self) -> None:
         super().__init__()
         with resources.path(
-            "card_scanner.apps.gui_qt.assets.images", "no_card_available.png"
+            "card_scanner_pkg.apps.gui_qt.assets.images", "no_card_available.png"
         ) as p:
             self._default_card_image = cv2.imread(str(p))
         self.is_online = True

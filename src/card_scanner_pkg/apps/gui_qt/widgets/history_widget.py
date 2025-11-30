@@ -1,6 +1,6 @@
 from __future__ import annotations
 from .toggle_button_widget import ToggleButton
-from card_scanner.core.api import Database
+from card_scanner_pkg.core.api import Database
 from pathlib import Path
 import csv
 from PySide6 import QtCore, QtWidgets

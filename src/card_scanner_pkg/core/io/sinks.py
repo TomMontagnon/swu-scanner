@@ -1,12 +1,12 @@
 from __future__ import annotations
 import cv2
 from pathlib import Path
-from card_scanner.core.api import IFrameSink
+from card_scanner_pkg.core.api import IFrameSink
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
     from collections.abc import Iterable
-    from card_scanner.core.api import Frame, Meta
+    from card_scanner_pkg.core.api import Frame, Meta
 
 
 class NullSink(IFrameSink):
