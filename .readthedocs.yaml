@@ -1,0 +1,23 @@
+# .readthedocs.yaml
+# Documentation build configuration for Read the Docs
+
+version: 2
+
+build:
+  os: ubuntu-24.04
+  tools:
+    python: "3.13"
+
+  # Needed when using "source/" and "build/"
+  jobs:
+    pre_build:
+      - pip install -r docs/requirements.txt
+
+sphinx:
+  configuration: docs/source/conf.py
+
+# Optional: if you use Markdown + MyST
+formats:
+  - htmlzip
+  - pdf
+  - epub
