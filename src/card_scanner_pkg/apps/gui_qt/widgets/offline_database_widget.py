@@ -20,7 +20,7 @@ class OfflineDBPopup(QtWidgets.QWidget):
         self.dir_line = QtWidgets.QLineEdit()
         self.dir_line.setPlaceholderText("Aucun fichier sélectionné")
         self.dir_line.setEnabled(False)
-        self.dir_line.setMinimumWidth(500)
+        self.dir_line.setMinimumWidth(10)
         self.browse_btn = QtWidgets.QToolButton()
         self.browse_btn.setText("📁")
         # self.browse_btn.setEnabled(False)
@@ -78,6 +78,8 @@ class OfflineDBWidget(QtWidgets.QToolButton):
         # popup.download_clicked.connect(self.export_requested.emit)
         popup.directory_selected.connect(self.directory_selected.emit)
 
+        pixmap = self.window().grab()
+        pixmap.save("/tmp/window.png")
         # Crée un QWidgetAction pour afficher le widget dans un QMenu
         action = QtWidgets.QWidgetAction(self)
         action.setDefaultWidget(popup)
